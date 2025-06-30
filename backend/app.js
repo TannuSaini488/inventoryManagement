@@ -40,7 +40,7 @@ app.use(express.urlencoded({ extended: true }));
 // console.log(process.env.FRONTEND_URL);
 
 app.get("/", (req, res) => {
-  res.send("<h1>working nicely</h1>");
+  res.send("API is running...");
 });
 
 app.use((error, req, res, next) => {
@@ -48,8 +48,8 @@ app.use((error, req, res, next) => {
   return res.status(400).json({ message: "internal server error" });
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(
-    `server is working at port:${process.env.PORT} in ${process.env.NODE_ENV} mode`
-  );
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
+
