@@ -16,7 +16,7 @@ import EditLocationScreen from "./screens/locations/EditLocationScreen";
 
 import BrandsScreen from "./screens/brands/BrandsScreen";
 import NewBrandsScreen from "./screens/brands/NewBrandsScreen";
-import EditBrandsScreen from "./screens/brands/EditBrandsScreen";
+import EditBrandsScreen from "./screens/brands/EditBrandsScreen.jsx";
 import UserManagementScreen from "./screens/users/UserManagementScreen";
 import ProductHistoryScreen from "./screens/product/ProductHistoryScreen";
 const router = createBrowserRouter([
