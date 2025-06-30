@@ -1,24 +1,24 @@
 import { createBrowserRouter } from "react-router-dom";
-import DashBoardLayout from "./screens/dashboard/DashBoardLayout.jsx";
-import LoginScreen from "./screens/login/LoginScreen.jsx";
-import SignupScreen from "./screens/login/SignupScreen.jsx";
-import DashBoardScreen from "./screens/dashboard/DashBoardScreen.jsx";
+import DashBoardLayout from "./screens/dashboard/DashBoardLayout";
+import LoginScreen from "./screens/login/LoginScreen";
+import SignupScreen from "./screens/login/SignupScreen";
+import DashBoardScreen from "./screens/dashboard/DashBoardScreen";
 
-import AuthLayout from "./screens/login/AuthLayout.jsx";
-import InventoryFormScreen from "./screens/InventoryFormScreen.jsx";
-import ProductInfoScreen from "./screens/product/ProductInfoScreen.jsx";
-import AddNewProductScreen from "./screens/product/AddNewProductScreen.jsx";
-import ProductEditScreen from "./screens/product/ProductEditScreen.jsx";
-import ProductsScreen from "./screens/product/ProductsScreen.jsx";
-import LocationsScreen from "./screens/locations/LocationsScreen.jsx";
-import NewLocationScreen from "./screens/locations/NewLocationScreen.jsx";
-import EditLocationScreen from "./screens/locations/EditLocationScreen.jsx";
+import AuthLayout from "./screens/login/AuthLayout";
+import InventoryFormScreen from "./screens/InventoryFormScreen";
+import ProductInfoScreen from "./screens/product/ProductInfoScreen";
+import AddNewProductScreen from "./screens/product/AddNewProductScreen";
+import ProductEditScreen from "./screens/product/ProductEditScreen";
+import PrductsScreen from "./screens/product/ProductsScreen";
+import LocationsScreen from "./screens/locations/LocationsScreen";
+import NewLocationScreen from "./screens/locations/NewLocationScreen";
+import EditLocationScreen from "./screens/locations/EditLocationScreen";
 
-import BrandsScreen from "./screens/brands/BrandsScreen.jsx";
-import NewBrandsScreen from "./screens/brands/NewBrandsScreen.jsx";
-import EditBrandsScreen from "./screens/brands/EditBrandsScreen.jsx";
-import UserManagementScreen from "./screens/users/UserManagementSystem.jsx";
-import ProductHistoryScreen from "./screens/product/ProductHistoryScreen.jsx";
+import BrandsScreen from "./screens/brands/BrandsScreen";
+import NewBrandsScreen from "./screens/brands/NewBrandsScreen";
+import EditBrandsScreen from "./screens/brands/EditBrandsScreen";
+import UserManagementScreen from "./screens/users/UserManagementScreen";
+import ProductHistoryScreen from "./screens/product/ProductHistoryScreen";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
 
       {
         path: "/products",
-        element: <ProductsScreen />,
+        element: <PrductsScreen />,
       },
       { path: "/products/new", element: <AddNewProductScreen /> },
       { path: "/products/edit/:id", element: <ProductEditScreen /> },
