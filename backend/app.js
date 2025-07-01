@@ -13,23 +13,16 @@ import historyRouter from "./routes/historyRoutes.js";
 dotenv.config();
 
 const app = express();
-// app.use(
-//   cors({
-//       // methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-//     // credentials: true,
-//     // preflightContinue: false,
-//     origin: true,
-//     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-//     credentials: true,
-//   })
-// );
-
-import cors from 'cors';
-app.use(cors({
-  origin: 'https://inventory-frontend-dqqu.onrender.com',
-  credentials: true
-}));
-
+app.use(
+  cors({
+      // methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    // credentials: true,
+    // preflightContinue: false,
+    origin: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true,
+  })
+);
 
 app.use(cookieParser());
 app.use(express.json());
