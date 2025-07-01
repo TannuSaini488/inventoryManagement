@@ -19,7 +19,7 @@ function DashBoardLayout() {
   const fetchUserInfo = async () => {
     try {
       const { data, status } = await axios.get(
-        `${SERVER_URL}/api/v1/users/me`,
+        `${SERVER_URL}/api/v1/users/all`,
 
         {
           withCredentials: true,
