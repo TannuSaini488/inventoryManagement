@@ -8,7 +8,7 @@ import AuthLayout from "./screens/login/AuthLayout";
 import InventoryFormScreen from "./screens/InventoryFormScreen";
 import ProductInfoScreen from "./screens/product/ProductInfoScreen";
 import AddNewProductScreen from "./screens/product/AddNewProductScreen";
-import ProductEditScreen from "./screens/product/ProductEditScreen";
+import ProductEditScreen from "./screens/product/ProductEditScreen.jsx";
 import PrductsScreen from "./screens/product/ProductsScreen";
 import LocationsScreen from "./screens/locations/LocationsScreen";
 import NewLocationScreen from "./screens/locations/NewLocationScreen";
