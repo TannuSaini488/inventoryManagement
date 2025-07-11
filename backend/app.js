@@ -14,7 +14,8 @@ dotenv.config();
 const app = express();
 
 const allowedOrigins = [
-  "https://inventory-frontend-xl36.onrender.com"
+  // "http://localhost:5173"
+    "https://inventory-frontend-xl36.onrender.com"
 ];
 
 app.use(

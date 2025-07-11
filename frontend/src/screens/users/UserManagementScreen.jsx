@@ -64,10 +64,10 @@ function UserManagementScreen() {
           User Management
         </h1>
         <p className="text-lg text-neutral-600">
-          Here you can modify the privilege of a user [admin/user]
+          {/* Here you can modify the privilege of a user [admin/user] */}
+          {user.name} <b>{user.role}</b>
         </p>
       </div>
-      <br />
 
       {error && (
         <ShowErrorMessage
