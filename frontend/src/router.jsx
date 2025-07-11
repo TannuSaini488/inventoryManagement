@@ -8,15 +8,15 @@ import AuthLayout from "./screens/login/AuthLayout";
 import InventoryFormScreen from "./screens/InventoryFormScreen";
 import ProductInfoScreen from "./screens/product/ProductInfoScreen";
 import AddNewProductScreen from "./screens/product/AddNewProductScreen";
-import ProductEditScreen from "./screens/product/ProductEditScreen.jsx";
+import ProductEditScreen from "./screens/product/ProductEditScreen";
 import PrductsScreen from "./screens/product/ProductsScreen";
 import LocationsScreen from "./screens/locations/LocationsScreen";
 import NewLocationScreen from "./screens/locations/NewLocationScreen";
 import EditLocationScreen from "./screens/locations/EditLocationScreen";
 
-import BrandsScreen from "./screens/brands/BrandsScreen";
 import NewBrandsScreen from "./screens/brands/NewBrandsScreen";
-import EditBrandsScreen from "./screens/brands/EditBrandsScreen.jsx";
+import BrandsScreen from "./screens/brands/BrandsScreen";
+import EditBrandsScreen from "./screens/brands/EditBrandsScreen";
 import UserManagementScreen from "./screens/users/UserManagementScreen";
 import ProductHistoryScreen from "./screens/product/ProductHistoryScreen";
 const router = createBrowserRouter([
@@ -108,7 +108,7 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
-export const SERVER_URL =
-  import.meta.env.VITE_MODE === "DEV"
-    ? import.meta.env.VITE_LOCAL
-    : import.meta.env.VITE_SERVER;
+export const SERVER_URL = "http://localhost:3000";
+  // import.meta.env.VITE_MODE === "DEV"
+  //   ? import.meta.env.VITE_LOCAL
+  //   : import.meta.env.VITE_SERVER;

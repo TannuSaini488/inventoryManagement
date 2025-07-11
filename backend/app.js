@@ -8,17 +8,18 @@ import productRouter from "./routes/productRoutes.js";
 import companyRouter from "./routes/companyRoutes.js";
 import locationRouter from "./routes/locationRoutes.js";
 import analyticsRoutes from "./routes/analyticsRoutes.js";
-import historyRouter from "./routes/historyRoutes.js";
 
 dotenv.config();
 
 const app = express();
+
+const allowedOrigins = [
+  "http://localhost:5173"
+];
+
 app.use(
   cors({
-      // methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-    // credentials: true,
-    // preflightContinue: false,
-    origin: true,
+    origin: allowedOrigins,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true,
   })
@@ -37,10 +38,8 @@ app.use("/api/v1/analytics", analyticsRoutes);
 
 app.use(express.urlencoded({ extended: true }));
 
-// console.log(process.env.FRONTEND_URL);
-
 app.get("/", (req, res) => {
-  res.send("API is running...");
+  res.send("<h1>working nicely</h1>");
 });
 
 app.use((error, req, res, next) => {
@@ -48,8 +47,8 @@ app.use((error, req, res, next) => {
   return res.status(400).json({ message: "internal server error" });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(
+    `server is working at port:${process.env.PORT} in ${process.env.NODE_ENV} mode`
+  );
 });
-
