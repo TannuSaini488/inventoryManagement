@@ -46,7 +46,7 @@ function LoginScreen() {
     <div className="min-h-screen bg-gradient-to-br flex items-center justify-center px-4">
       <div className="bg-white rounded-xl overflow-hidden shadow-2xl w-full max-w-md">
         {/* Top Welcome Section */}
-        <div className="bg-gradient-to-br from-cyan-500 to-blue-700 p-8 text-white relative">
+        <div className="bg-gradient-to-br bg-blue-500 p-8 text-white relative">
           <h2 className="text-2xl font-bold">Welcome,</h2>
           <h3 className="text-xl font-semibold mb-2">Inventory Management System</h3>
           <p className="text-sm opacity-80 leading-relaxed">
@@ -66,7 +66,7 @@ function LoginScreen() {
 
           <form className="space-y-5" onSubmit={handleSignIn}>
             {/* Email Input */}
-            <div className="flex items-center bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md px-3 py-2 text-white">
+            <div className="flex items-center bg-gradient-to-r bg-blue-400 rounded-md px-3 py-2 text-white">
               <FaUser className="mr-2" />
               <input
                 type="email"
@@ -79,7 +79,7 @@ function LoginScreen() {
             </div>
 
             {/* Password Input */}
-            <div className="flex items-center bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md px-3 py-2 text-white">
+            <div className="flex items-center bg-gradient-to-r bg-blue-400 rounded-md px-3 py-2 text-white">
               <FaLock className="mr-2" />
               <input
                 type="password"
@@ -105,7 +105,7 @@ function LoginScreen() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-indigo-800 hover:bg-indigo-900 text-white py-2 rounded-md mt-2 text-sm tracking-wide"
+              className="w-full bg-indigo-600 hover:bg-indigo-900 text-white py-2 rounded-md mt-2 text-sm tracking-wide"
             >
               LOGIN
             </button>
