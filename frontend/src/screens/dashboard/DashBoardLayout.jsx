@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import HeaderBar from "../../components/HeaderBar";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import axios from "axios";
-import DashBoardScreen from "./DashBoardScreen";
-import loginLogo from "../../assets/authenticate.svg";
+// import loginLogo from "../../assets/authenticate.svg";
+import ScreenLogout from "./ScreenLogout";
 import SideNavbar from "../../components/SideNavbar";
 import { SERVER_URL } from "../../router";
 
@@ -46,12 +46,12 @@ function DashBoardLayout() {
   };
   return (
     <>
-      {!data && <br />}
+      {/* {!data && <br />}
       {!data && (
         <div className=" container mx-auto w-2/4 text-center mb-3 px-3 py-1 border-2 border-yellow-600 bg-yellow-100 rounded-md text-yellow-800">
           Your are not authenticated please login to continue
         </div>
-      )}
+      )} */}
 
       {/* loading spinner  animation  */}
       {isLoading && (
@@ -81,19 +81,20 @@ function DashBoardLayout() {
 
       {/* home screen logout component */}
       {!data && (
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="relative">
-            <img src={loginLogo} alt="Image" class="block w-full" />
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center   text-white p-4">
-              <Link
-                to={"auth"}
-                className="px-6 py-2 animate-pulse rounded-md text-lg  bg-blue-800"
-              >
-                Login Now
-              </Link>
-            </div>
-          </div>
-        </div>
+        // <div className="min-h-screen flex items-center justify-center">
+        //   <div className="relative">
+        //     <img src={loginLogo} alt="Image" class="block w-full" />
+        //     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center   text-white p-4">
+        //       <Link
+        //         to={"auth"}
+        //         className="px-6 py-2 animate-pulse rounded-md text-lg  bg-blue-800"
+        //       >
+        //         Login Now
+        //       </Link>
+        //     </div>
+        //   </div>
+        // </div>
+        <ScreenLogout />
       )}
     </>
   );
