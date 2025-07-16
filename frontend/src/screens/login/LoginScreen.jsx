@@ -1,16 +1,16 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaUser, FaLock } from "react-icons/fa";
 import { SERVER_URL } from "../../router";
 
 function LoginScreen() {
-  
   const [formData, setData] = useState({
     email: "",
     password: "",
   });
 
-  const history = useNavigate(); // Use useNavigate instead of useHistory
+  const history = useNavigate();
 
   function handInputChange(e) {
     setData({ ...formData, [e.target.id]: e.target.value });
@@ -32,110 +32,83 @@ function LoginScreen() {
       );
 
       if (status === 201) {
-        // console.log(response.headers.Set-Cookie)
-        // alert("Login success");
-        // Redirect to home upon successful login
-        history("/"); // Use history function to redirect
+        history("/");
       } else {
-        alert("Wrong credentials. Check Email and password ");
+        alert("Wrong credentials. Check Email and password.");
       }
     } catch (error) {
-      console.error("Something went wrong:", error); // Corrected console.log to console.error
+      console.error("Something went wrong:", error);
       alert("Something went wrong");
     }
   }
 
   return (
-    <div className="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
-      <div className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md">
-        <div className="p-4 py-6 text-white bg-blue-500 md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
-          <div className="my-3 text-4xl font-bold tracking-wider text-center">
-            <a href="#">Inventory Management</a>
-          </div>
-          <p className="mt-6 font-normal text-center text-gray-300 md:mt-0">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-            eligendi perspiciatis, sapiente si.
+    <div className="min-h-screen bg-gradient-to-br flex items-center justify-center px-4">
+      <div className="bg-white rounded-xl overflow-hidden shadow-2xl w-full max-w-md">
+        {/* Top Welcome Section */}
+        <div className="bg-gradient-to-br from-cyan-500 to-blue-700 p-8 text-white relative">
+          <h2 className="text-2xl font-bold">Welcome,</h2>
+          <h3 className="text-xl font-semibold mb-2">Inventory Management System</h3>
+          <p className="text-sm opacity-80 leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor
+            enim, bibendum sed justo quis.
           </p>
-          <p className="flex flex-col items-center justify-center mt-10 text-center">
-            <span>Don't have an account?</span>
-            <Link to={"signup"} className="underline">
-              Get Started!
-            </Link>
-          </p>
-          <p className="mt-6 text-sm text-center text-gray-300">
-            Read our{" "}
-            <a href="#" className="underline">
-              terms
-            </a>{" "}
-            and{" "}
-            <a href="#" className="underline">
-              conditions
-            </a>
-          </p>
+          <Link to={"/auth/signup"} className="mt-6 text-sm underline tracking-wide">
+            CREATE ACCOUNT
+          </Link>
         </div>
-        <div className="p-5 bg-white md:flex-1">
-          <h3 className="my-4 text-2xl font-semibold text-gray-700">
-            Account Login
+
+        {/* Login Form Section */}
+        <div className="bg-white px-8 py-10">
+          <h3 className="text-center text-gray-700 font-semibold text-sm tracking-wide mb-6">
+            USER LOGIN
           </h3>
-          <form
-            action="#"
-            className="flex flex-col space-y-5"
-            onSubmit={(e) => handleSignIn(e)}
-          >
-            <div className="flex flex-col space-y-1">
-              <label
-                htmlFor="email" // Corrected 'for' to 'htmlFor'
-                className="text-sm font-semibold text-gray-500"
-              >
-                Email address
-              </label>
+
+          <form className="space-y-5" onSubmit={handleSignIn}>
+            {/* Email Input */}
+            <div className="flex items-center bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md px-3 py-2 text-white">
+              <FaUser className="mr-2" />
               <input
-                onChange={handInputChange}
                 type="email"
                 id="email"
-                autoFocus // Corrected 'autofocus' to 'autoFocus'
+                placeholder="Email address"
+                onChange={handInputChange}
                 required
-                className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                className="bg-transparent focus:outline-none flex-1 placeholder-white text-sm"
               />
             </div>
-            <div className="flex flex-col space-y-1">
-              <div className="flex items-center justify-between">
-                <label
-                  htmlFor="password" // Corrected 'for' to 'htmlFor'
-                  className="text-sm font-semibold text-gray-500"
-                >
-                  Password
-                </label>
-              </div>
+
+            {/* Password Input */}
+            <div className="flex items-center bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md px-3 py-2 text-white">
+              <FaLock className="mr-2" />
               <input
                 type="password"
-                onChange={handInputChange}
                 id="password"
+                placeholder="Password"
+                onChange={handInputChange}
                 required
-                className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                className="bg-transparent focus:outline-none flex-1 placeholder-white text-sm"
               />
             </div>
-            <div className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                id="remember"
-                className="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-blue-200"
-              />
-              <label
-                htmlFor="remember" // Corrected 'for' to 'htmlFor'
-                className="text-sm font-semibold text-gray-500"
-              >
-                Remember me
+
+            {/* Remember + Forgot */}
+            <div className="flex justify-between text-sm text-blue-600">
+              <label className="flex items-center space-x-1">
+                <input type="checkbox" className="accent-blue-600" />
+                <span>Remember</span>
               </label>
+              <a href="#" className="hover:underline">
+                Forgot password ?
+              </a>
             </div>
-            <div>
-              <button
-                type="submit"
-                className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-blue-200 focus:ring-4"
-              >
-                Log in
-              </button>
-            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="w-full bg-indigo-800 hover:bg-indigo-900 text-white py-2 rounded-md mt-2 text-sm tracking-wide"
+            >
+              LOGIN
+            </button>
           </form>
         </div>
       </div>
